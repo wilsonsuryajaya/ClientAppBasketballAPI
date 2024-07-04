@@ -39,18 +39,18 @@ export class PlayerListComponent implements OnInit {
     let dialogRef = this.dialog.open(PlayerFormComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(res => {
+      console.log(res);
       if (res != 0) {
         console.log('The dialog was closed but player was created');
 
         this._snackBar.open("Player was created Successfully", "Close", {
           duration: 2000,
         });
-        this.getPlayers();
       }
       else {
         console.log('The dialog was closed');
       }
-
+      this.getPlayers();
     });
 
   }
@@ -69,18 +69,18 @@ export class PlayerListComponent implements OnInit {
     let dialogRef = this.dialog.open(PlayerFormComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(res => {
+      console.log(res);
       if (res != 0) {
         console.log('The dialog was closed but player was edited');
 
         this._snackBar.open("Player was created Edited", "Close", {
           duration: 2000,
         });
-        this.getPlayers();
       }
       else {
         console.log('The dialog was closed');
       }
-
+      this.getPlayers();
     });
   }
 
@@ -91,6 +91,7 @@ export class PlayerListComponent implements OnInit {
       this._snackBar.open("Player was Deleted Successfully", "Close", {
         duration: 2000,
       });
+      this.getPlayers();
     });
   }
 
