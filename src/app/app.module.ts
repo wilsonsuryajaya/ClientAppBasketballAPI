@@ -8,6 +8,8 @@ import { MaterialModule } from './material/material.module';
 import { PlayerListComponent } from './player-list/player-list.component';
 import { PlayerFormComponent } from './player-list/player-form/player-form.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,11 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
         { path: '', component: PlayerListComponent, pathMatch: 'full' }
-    ])
+    ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
